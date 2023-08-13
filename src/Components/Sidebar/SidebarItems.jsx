@@ -27,12 +27,4 @@ const SideBarItems = ({ icon, title, navSize, handleClick, user }) => {
   );
 };
 
-// SideBarItems.propTypes = {
-//   icon: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   navSize: PropTypes.string.isRequired,
-//   handleClick: PropTypes.func.isRequired,
-//   user: PropTypes.object.isRequired,
-// };
-
 export default SideBarItems;

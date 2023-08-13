@@ -5,8 +5,8 @@ import { user_list } from "../../Data/userList";
 export default function SideBar({ navSize, changeNavSize, handleClick, user }) {
   return (
     <div
-      className={`${
-        navSize === "small" ? "w-[65px]" : "w-[240px]"
+      className={`border ${
+        navSize === "small" ? "w-[75px]" : "w-[240px]"
       } bg-white min-h-[100vh] flex flex-col fixed top-0 left-0 z-[100] pt-[10px] transition-all duration-300 ease`}
     >
       <div
@@ -17,13 +17,14 @@ export default function SideBar({ navSize, changeNavSize, handleClick, user }) {
         <div
           className={`w-full flex ${
             navSize === "small" ? "justify-center" : "justify-between"
-          } items-center px-[10px] rounded-md BGColor py-3`}
+          } items-center px-[10px] rounded-md sm:bg-transparent md:BGColor py-3`}
         >
-          <div className={`${navSize === "small" ? "hidden" : "block"}`}>
-            <p>Users</p>
+          <div className={`font-bold text-lg ${navSize === "small" ? "hidden" : "block"}`}>
+            <p>Conversations</p>
           </div>
 
           <button
+            className="sm:hidden md:block"
             onClick={() => {
               navSize === "small"
                 ? changeNavSize("large")

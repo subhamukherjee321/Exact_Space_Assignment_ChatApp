@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Navbar from "./Components/Navbar";
-// import ChatApp from "./Components/Chat/ChatApp";
-import { user_list } from "./Data/userList";
 import SideBar from "./Components/Sidebar/Sidebar";
+import ChatApp from "./Components/ChatSection/ChatApp";
 
 const App = () => {
   const [navSize, changeNavSize] = useState("small");
-  const [user, setUser] = useState(user_list[0]);
+  const [user, setUser] = useState("");
 
   const handleClick = (value) => {
+    console.log('value: ', value);
     setUser(value);
   };
 
@@ -30,9 +30,7 @@ const App = () => {
         </div>
         <div>
           <Navbar />
-          {/* <div className="w-full py-6 px-8">
-            <ChatApp user={user} />
-          </div> */}
+          <ChatApp user={user} />
         </div>
       </div>
     </div>
