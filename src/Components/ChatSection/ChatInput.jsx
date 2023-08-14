@@ -1,13 +1,39 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import EmojiPicker from "emoji-picker-react";
 import { Input, Tooltip } from "@material-tailwind/react";
+import { user_list } from "../../Data/userList";
 
 const ChatInput = ({ handleSend }) => {
   const [inputValue, setInputValue] = useState("");
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
+  const [mention, setMention] = useState(false);
+  const ref = useRef(null);
 
   const handleEmojiClick = (emojiObject) => {
     setInputValue((prevMsg) => prevMsg + emojiObject.emoji);
+  };
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+
+    if (e.target.value.includes("@")) {
+      const query = e.target.value.split("@")[1].toLowerCase();
+      const matchedMentions = user_list.filter((user) =>
+        user.title.toLowerCase().includes(query)
+      );
+      if (matchedMentions.length > 0) {
+        setMention(true);
+      }
+    } else {
+      setMention(false);
+    }
+  };
+
+  const handleMention = (value) => {
+    setInputValue((prev) => `${prev}${value}`);
+    setMention(false);
+    console.log(ref.current);
+    ref.current.focus();
   };
 
   const handleSubmit = (e) => {
@@ -33,8 +59,21 @@ const ChatInput = ({ handleSend }) => {
         <div className="w-full sm:w-auto h-auto absolute bottom-20">
           <EmojiPicker
             onEmojiClick={handleEmojiClick}
-            className="absolute top-0 left-0"
           />
+        </div>
+      )}
+
+      {mention && (
+        <div className="text-center p-[4px] absolute bottom-20 shadow-2xl">
+          {user_list.map((ele, i) => (
+            <div
+              key={i}
+              className="m-[4px] text-sm p-[4px] border-b border-gray-500 hover:bg-blue-gray-100 cursor-pointer"
+              onClick={() => handleMention(ele.title)}
+            >
+              {ele.title}
+            </div>
+          ))}
         </div>
       )}
 
@@ -43,13 +82,14 @@ const ChatInput = ({ handleSend }) => {
         onSubmit={handleSubmit}
         className="flex gap-2 sm:gap-5 w-full justify-between items-center"
       >
-        <Input
+        <input
           type="text"
           color="blue"
-          label="Type something..."
+          placeholder="Type something..."
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className="w-full"
+          onChange={handleChange}
+          className="w-full border border-black p-[5px] rounded-lg pl-4 placeholder-gray-600"
+          ref={ref}
         />
 
         <Tooltip content="Send Message">
