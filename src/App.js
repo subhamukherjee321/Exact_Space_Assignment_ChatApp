@@ -8,7 +8,6 @@ const App = () => {
 
   return (
     <div className="w-full min-h-screen bg-[#f9f9f9]">
-      {/* Desktop: Sidebar and Content */}
       <div
         className={`grid ${
           navSize === "small" ? "grid-cols-[75px,1fr]" : "grid-cols-[240px,1fr]"

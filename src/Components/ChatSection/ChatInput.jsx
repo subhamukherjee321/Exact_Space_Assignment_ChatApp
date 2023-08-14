@@ -20,7 +20,7 @@ const ChatInput = ({ handleSend }) => {
   };
 
   return (
-    <div className="flex gap-2 sm:gap-5 w-full py-5 px-5 items-center">
+    <div className="flex gap-2 sm:gap-5 w-full py-5 px-5 items-center relative">
       <Tooltip content="Select Emoji">
         <button
           onClick={() => setIsEmojiPickerOpen(!isEmojiPickerOpen)}
@@ -29,11 +29,14 @@ const ChatInput = ({ handleSend }) => {
           😊
         </button>
       </Tooltip>
-        {isEmojiPickerOpen && (
-          <div className="w-full sm:w-auto">
-            <EmojiPicker onEmojiClick={handleEmojiClick} />
-          </div>
-        )}
+      {isEmojiPickerOpen && (
+        <div className="w-full sm:w-auto h-auto absolute bottom-20">
+          <EmojiPicker
+            onEmojiClick={handleEmojiClick}
+            className="absolute top-0 left-0"
+          />
+        </div>
+      )}
 
       <form
         action=""
