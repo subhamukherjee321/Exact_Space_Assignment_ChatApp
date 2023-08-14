@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Avatar,  } from "@material-tailwind/react";
+import { Avatar } from "@material-tailwind/react";
 
 const ChatMessage = ({ username, message, avatar }) => {
   const [likeCount, setLikeCount] = useState(0);

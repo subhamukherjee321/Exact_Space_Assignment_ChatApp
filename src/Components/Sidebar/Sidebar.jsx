@@ -1,8 +1,12 @@
 import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
 import SideBarItems from "./SidebarItems";
 import { user_list } from "../../Data/userList";
+import {AppState} from "../../Context/AppContext";
 
-export default function SideBar({ navSize, changeNavSize, handleClick, user }) {
+export default function SideBar() {
+
+  const {navSize, changeNavSize } = AppState();
+
   return (
     <div
       className={`border ${
@@ -43,11 +47,8 @@ export default function SideBar({ navSize, changeNavSize, handleClick, user }) {
           {user_list?.map((ele) => (
             <SideBarItems
               key={ele.id}
-              navSize={navSize}
               icon={ele.icon}
               title={ele.title}
-              handleClick={handleClick}
-              user={user}
             />
           ))}
         </div>

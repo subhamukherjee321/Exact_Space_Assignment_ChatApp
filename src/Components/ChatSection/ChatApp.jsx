@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import ChatItem from "./ChatIem";
 import ChatInput from "./ChatInput";
 import { user_list } from "../../Data/userList";
+import { AppState } from "../../Context/AppContext";
 
-const ChatApp = ({ user }) => {
+const ChatApp = () => {
   const [data, setData] = useState([]);
-  console.log("data: ", data);
+  const {user} = AppState();
 
   const handleSend = (message) => {
     let userdata = user
@@ -22,7 +23,7 @@ const ChatApp = ({ user }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between item-center w-full h-[85.5vh] bg-white rounded-md">
+    <div className="flex flex-col justify-between item-center w-full h-[85.5vh] bg-[#EDF1F5] rounded-md">
       <ChatItem data={data} />
       <ChatInput handleSend={handleSend} />
     </div>

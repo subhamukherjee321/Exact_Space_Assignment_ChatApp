@@ -7,7 +7,7 @@ const ChatInput = ({ handleSend }) => {
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
 
   const handleEmojiClick = (emojiObject) => {
-    setInputValue((prevMsg) => prevMsg + emojiObject.emoji); // Append emoji to input
+    setInputValue((prevMsg) => prevMsg + emojiObject.emoji);
   };
 
   const handleSubmit = (e) => {
@@ -20,11 +20,11 @@ const ChatInput = ({ handleSend }) => {
   };
 
   return (
-    <div className="flex gap-2 sm:gap-5 w-full py-5 items-center">
+    <div className="flex gap-2 sm:gap-5 w-full py-5 px-5 items-center">
       <Tooltip content="Select Emoji">
         <button
           onClick={() => setIsEmojiPickerOpen(!isEmojiPickerOpen)}
-          className="text-2xl"
+          className="text-2xl border-2 rounded-full bg-blue-gray-100 p-[4px]"
         >
           😊
         </button>

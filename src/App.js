@@ -1,16 +1,10 @@
-import { useState } from "react";
 import Navbar from "./Components/Navbar";
 import SideBar from "./Components/Sidebar/Sidebar";
 import ChatApp from "./Components/ChatSection/ChatApp";
+import { AppState } from "./Context/AppContext";
 
 const App = () => {
-  const [navSize, changeNavSize] = useState("small");
-  const [user, setUser] = useState("");
-
-  const handleClick = (value) => {
-    console.log('value: ', value);
-    setUser(value);
-  };
+  const {navSize} = AppState();
 
   return (
     <div className="w-full min-h-screen bg-[#f9f9f9]">
@@ -21,16 +15,11 @@ const App = () => {
         } transition-all duration-300 ease`}
       >
         <div>
-          <SideBar
-            navSize={navSize}
-            handleClick={handleClick}
-            user={user}
-            changeNavSize={changeNavSize}
-          />
+          <SideBar />
         </div>
         <div>
           <Navbar />
-          <ChatApp user={user} />
+          <ChatApp />
         </div>
       </div>
     </div>

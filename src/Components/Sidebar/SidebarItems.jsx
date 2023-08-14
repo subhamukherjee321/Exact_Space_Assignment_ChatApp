@@ -1,6 +1,10 @@
 import { Avatar } from "@material-tailwind/react";
+import { AppState } from "../../Context/AppContext";
 
-const SideBarItems = ({ icon, title, navSize, handleClick, user }) => {
+const SideBarItems = ({ icon, title }) => {
+
+  const {navSize, handleClick, user} = AppState();
+
   return (
     <div
       onClick={() => handleClick({ title, icon })}
