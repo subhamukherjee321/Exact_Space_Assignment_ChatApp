@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Excat Space ChatApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple chat application built using ReactJS, Tailwind CSS, Material Tailwind that allows users to send and receive messages. Users are randomly assigned usernames from a predefined list and also we can select user to message particular user and also like messages.
 
-## Available Scripts
+![ChatApp_Desktop](https://github.com/subhamukherjee321/Exact_Space_Assignment_ChatApp/assets/107471586/c8889d72-c4ee-4dad-8bbb-77d099854ae9)
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+Users Names
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stacks
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+   Frontend : React JS, TailwindCSS, Material-TailWind;
+   Frontend Deployment : Vercel;
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Send and receive chat messages in real-time.
+- Randomly assign a username from a predefined list to each message.
+- Select specific user to send that user the message.
+- Like messages with a thumbs-up button, displaying the like count.
+- Optional: Emoji options in chat messages.
+- Optional: Mention users using the '@' symbol and display a list of available users.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone this repository to your local machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+2. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Enter your chat message in the textbox and click the "Send" button to see your message appear in the chat thread.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Stretch Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Emoji Options: To include emojis in your message, use the emoji codes (e.g., `:smile:`) and they will be rendered as emojis.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Mentions: Type '@' followed by a few characters to see a dropdown of available users from the user list. Select a user to mention them in your message.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Mobile View
+![Mobile-Reposive](https://github.com/subhamukherjee321/Exact_Space_Assignment_ChatApp/assets/107471586/2ebc998f-af68-4dc6-9bb7-24d52cb628de)
+<br/>
+## Tablet View 
+![mobile_size](https://github.com/subhamukherjee321/Exact_Space_Assignment_ChatApp/assets/107471586/2a01135a-990e-4edb-bfb8-1e9064e3c0fe)
+iew
